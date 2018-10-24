@@ -1,0 +1,49 @@
+.idea/
+*.iml
+atlassian-ide-plugin.xml
+.DS_Store
+atlassian-ide-plugin.xml
+
+target/
+node_modules/
+coverage/
+*.log
+logs/
+.tscache/
+
+#Each developer will have a unique app name and domain, so this file shouldn't be tracked
+manifest.yml
+application-local.yml
+application-test.yml
+application-stage.yml
+
+#Git commit id config -- https://github.com/ktoso/maven-git-commit-id-plugin
+src/main/resources/git.properties
+
+#Ignore typscript generated files
+src/main/resources/static/js/**/*.js
+src/main/resources/static/js/**/*.*.map
+
+#Ignore Grunt generated files
+src/main/resources/static/build/
+
+src/main/resources/static/*.html
+
+#Ignore any jars that have been copied into the cloudfoundry dir for manual manifest deploys
+bl-web.jar
+cloudfoundry/*.jar
+cloudfoundry/*.jar.original
+
+#Ignore jira plugin
+atlassian-ide-plugin.xml
+/src/main/resources/static/lib
+
+#don't check in my temp language files
+/scripts/translation_scripts/sent_to_translation/
+/scripts/translation_scripts/english
+/scripts/translation_scripts/files_received_from_translation
+/scripts/translation_scripts/needed_translations
+/scripts/translation_scripts/translated_files_ready_to_deploy
+/scripts/translation_scripts/language_files
+/load_testing/bl/results
+/load_testing/bl2
