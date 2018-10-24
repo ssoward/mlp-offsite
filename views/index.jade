@@ -1,0 +1,78 @@
+extends layout
+
+block body
+    div(class="center")
+        h1 MLP Goshen OffSite
+    div(ng-controller="AppCtrl", class="bg-img")
+      .col
+        h3 Messages
+        .overflowable
+          p(ng-repeat='message in messages',
+            ng-class='{alert: message.user == "chatroom"}') {{message.user}}: {{message.text}}
+
+      .col
+        h3 Users
+        .overflowable
+          p(ng-repeat='user in users') {{user}}
+
+      .clr
+        form(ng-submit='sendMessage()')
+          | Message:
+          input(size='60', ng-model='message')
+          input(type='submit', value='Send')
+
+      .clr
+        h3 Change your name
+        p Your current user name is {{name}}
+      form(ng-submit='changeName()')
+        input(ng-model='newName')
+        input(type='submit', value='Change Name')
+
+    script(src='js/lib/angular/angular.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='js/app.js')
+    script(src='js/services.js')
+    script(src='js/controllers.js')
+    script(src='js/filters.js')
+    script(src='js/directives.js')
+
+//extends layout
+//
+//block body
+//    div(ng-controller='AppCtrl',class="container")
+//    img(src="img/jerusalem.jpg", class="hero-bg")
+//    div(class="center")
+//        h1 MLP Goshen OffSite
+//        .col
+//            h3 Messages
+//            .overflowable
+//                p(ng-repeat='message in messages',
+//                ng-class='{alert: message.user == "chatroom"}') {{message.user}}: {{message.text}}
+//
+//        .col
+//            h3 Users
+//            .overflowable
+//                p(ng-repeat='user in users') {{user}}
+//
+//        .clr
+//            form(ng-submit='sendMessage()')
+//                | Message:
+//                input(size='60', ng-model='message')
+//                input(type='submit', value='Send')
+//
+//        .clr
+//            h3 Change your name
+//            p Your current user name is {{name}}
+//        form(ng-submit='changeName()')
+//            input(ng-model='newName')
+//            input(type='submit', value='Change Name')
+//
+//script(src='js/lib/angular/angular.js')
+//script(src='/socket.io/socket.io.js')
+//script(src='js/app.js')
+//script(src='js/services.js')
+//script(src='js/controllers.js')
+//script(src='js/filters.js')
+//script(src='js/directives.js')
+
+
